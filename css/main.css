@@ -1,0 +1,58 @@
+body {
+    background-color: goldenrod;
+    text-align: center;
+    z-index: 0;
+}
+
+#container {
+    width: 80%;
+    height: 80%;
+    background: tan;
+    margin: 0 auto;
+
+}
+
+
+#trivia {
+    text-align: center;
+    padding: 20% 0 0 0;
+    margin: 0 0 0 30%;
+    width: 40%;
+    height: 40%;
+    background-color: white;
+    position: absolute;
+    z-index: -100;
+}
+
+img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+#start {
+    width: 150px;
+    height: 50px;
+    z-index: 1;
+}
+
+#next {
+    z-index: 0;
+}
+
+.game {
+	width: 100px;
+	height: 100px;
+	background-color: rgb(160, 121, 23);
+}
+
+.row {
+	display: flex;
+	padding: 2em;
+	align-items: center;
+	justify-content: center;
+}
+
+#middle {
+	justify-content: space-between;
+}
