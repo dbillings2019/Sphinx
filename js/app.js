@@ -17,6 +17,11 @@ var a = document.getElementById("a");
 var b = document.getElementById("b");
 var c = document.getElementById("c");
 
+var lifeCount = document.getElementById("lifeCount");
+var relicCount = document.getElementById("relicCount")
+lifeCount.textContent = lives;
+relicCount.textContent = relics;
+
 var questions = [
     {question: "When the wind blows north, where does a peanut falling from a tree land?",
     answers: {
@@ -90,6 +95,12 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     
     //radio buttons
+    var answer = document.forms["formA"];
+    for(radio in answer) {
+    answer[radio].addEventListener ('click', function(){
+        console.log(this.value);
+    })
+    }
     
     ankh.addEventListener('click', function(){
         console.log("Clicking ankh...");
@@ -100,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
         currQues.textContent = questions[i].question;
         a.textContent = questions[i].answers.a;
         b.textContent = questions[i].answers.b;
-        clearTimeout.textContent = questions[i].answers.c;
+        c.textContent = questions[i].answers.c;
     })
 
     caduces.addEventListener('click', function(){
@@ -112,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
         currQues.textContent = questions[i].question;
         a.textContent = questions[i].answers.a;
         b.textContent = questions[i].answers.b;
-        clearTimeout.textContent = questions[i].answers.c;
+        c.textContent = questions[i].answers.c;
     })
 
     eyeRa.addEventListener('click', function(){
@@ -124,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
         currQues.textContent = questions[i].question;
         a.textContent = questions[i].answers.a;
         b.textContent = questions[i].answers.b;
-        clearTimeout.textContent = questions[i].answers.c
+        c.textContent = questions[i].answers.c
     })
 
     sphinx.addEventListener('click', function(){
