@@ -4,9 +4,9 @@ var caduces = document.getElementById("caduces");
 var eyeRa = document.getElementById("eyeRa");
 var sphinx = document.getElementById("sphinx");
 
+var i = 0;
 var lives = 3;
 var relics = 0;
-var i = 0;
 
 var container = document.getElementById("container");
 var container2 = document.getElementById("container2");
@@ -19,8 +19,11 @@ var c = document.getElementById("c");
 
 var lifeCount = document.getElementById("lifeCount");
 var relicCount = document.getElementById("relicCount")
-lifeCount.textContent = lives;
-relicCount.textContent = relics;
+function update () {
+    lifeCount.textContent = lives;
+    relicCount.textContent = relics;
+};
+update();
 
 var questions = [
     {question: "When the wind blows north, where does a peanut falling from a tree land?",
@@ -95,12 +98,22 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     
     //radio buttons
-    var answer = document.forms["formA"];
-    for(radio in answer) {
-    answer[radio].addEventListener ('click', function(){
-        console.log(this.value);
-    })
+    var radios = document.querySelectorAll("[name='answer']");
+    
+    for (let i = 0; i < radios.length; i++) {
+       
+      radios[i].addEventListener('click', function(e) {
+        if ( questions[i].correctAnswer === e.target.value) {
+        relics++;
+        }
+        console.log(relics);
+        if ( questions[i].correctAnswer !== e.target.value) {
+        lives--;
+        }
+        update();
+        console.log(lives)
     }
+      )};
     
     ankh.addEventListener('click', function(){
         console.log("Clicking ankh...");
